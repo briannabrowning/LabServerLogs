@@ -2,16 +2,14 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, col, regexp_replace
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, TimestampType
 
-BOOTSTRAP_SERVERS = "confluent-local-broker-1:62444"
+BOOTSTRAP_SERVERS = "confluent-local-broker-1:49304"
 TOPIC = "server_logs"
 
 # DATABASE SETTINGS
-# the following variables are unique to each person:
 DB_PORT="5432"
 DB_NAME="server_logs"
 DB_USERNAME="postgres"
-DB_PASSWORD="hellosql"
-# ^^^ confirm your own values
+DB_PASSWORD="hellos"
 DB_URL = f"jdbc:postgresql://host.docker.internal:{DB_PORT}/{DB_NAME}"
 DB_PROPERTIES = {"user": DB_USERNAME, "password": DB_PASSWORD, "driver": "org.postgresql.Driver"}
 
